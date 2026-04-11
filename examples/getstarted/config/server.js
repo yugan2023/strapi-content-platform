@@ -5,7 +5,6 @@ const cronTasks = require('./src/cron-tasks');
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  url: 'https://strapi-content-platform-copy-production.up.railway.app',
   cron: {
     enabled: true,
     tasks: cronTasks,
