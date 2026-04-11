@@ -11,7 +11,7 @@
     "develop:ce": "STRAPI_DISABLE_EE=true strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
-    "postinstall": "echo skip"
+    "postinstall": "echo skip husky"
   },
   "dependencies": {
     "@strapi/blocks-react-renderer": "1.0.2",
