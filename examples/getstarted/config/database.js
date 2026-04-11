@@ -8,13 +8,12 @@ const sqlite = {
 
 const postgres = {
   client: 'postgres',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 5432,
-    host: 'localhost',
-  },
+    connection: {
+      connectionString: env('DATABASE_URL'),
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    },
 };
 
 const mysql = {
