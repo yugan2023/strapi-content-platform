@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
-    "startCommand": "yarn strapi start"
+    "startCommand": "yarn start"
   }
 }
