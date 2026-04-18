@@ -31,6 +31,7 @@ module.exports = ({ env }) => ({
       accessKeyId: env('AWS_ACCESS_KEY_ID'),
       secretAccessKey: env('AWS_SECRET_ACCESS_KEY'),
       endpoint: env('AWS_ENDPOINT'),
+      baseUrl: env('CDN_URL'),
       region: 'auto',
       s3ForcePathStyle: true,
 
