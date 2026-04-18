@@ -14,7 +14,7 @@ module.exports = (config, { strapi }) => {
       if (!data) return data;
 
       if (typeof data === 'string') {
-        return data.replace(endpoint, cdn + '/' + bucket);
+        return data.replace(endpoint, cdn);
       }
 
       if (Array.isArray(data)) {
