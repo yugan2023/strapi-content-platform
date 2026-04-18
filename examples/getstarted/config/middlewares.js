@@ -52,7 +52,7 @@ module.exports = [
     config: {},
   },
   {
-    resolve: './src/middlewares/replace-upload-url',
+    resolve: './src/middlewares/replace-upload-url.js',
     config: {},
   },
 ];
