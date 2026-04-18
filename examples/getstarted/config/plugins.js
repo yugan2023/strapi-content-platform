@@ -32,7 +32,7 @@ upload: {
       secretAccessKey: env('AWS_SECRET_ACCESS_KEY'),
       endpoint: env('AWS_ENDPOINT'), // ⭐ 只能用 cloudflarestorage
       region: 'auto',
-      s3ForcePathStyle: flase,
+      s3ForcePathStyle: false,
 
       params: {
         Bucket: env('AWS_BUCKET'),
