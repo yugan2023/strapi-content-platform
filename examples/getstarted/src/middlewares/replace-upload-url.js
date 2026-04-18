@@ -6,7 +6,6 @@ module.exports = (config, { strapi }) => {
 
     const endpoint = process.env.AWS_ENDPOINT;
     const cdn = process.env.CDN_URL;
-    const bucket = process.env.AWS_BUCKET;
 
     if (!endpoint || !cdn) return;
 
