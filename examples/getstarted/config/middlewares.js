@@ -51,4 +51,8 @@ module.exports = [
     resolve: './src/custom/middleware.js',
     config: {},
   },
+  {
+    resolve: './src/middlewares/replace-upload-url',
+    config: {},
+  },
 ];
