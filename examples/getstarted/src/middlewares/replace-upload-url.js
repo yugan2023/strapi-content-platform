@@ -9,25 +9,19 @@ module.exports = (config, { strapi }) => {
 
     if (!endpoint || !cdn) return;
 
-    const replaceUrl = (data) => {
-      if (!data) return data;
+    const replaceUrl = (str) => {
+      if (typeof str !== 'string') return str;
 
-      if (typeof data === 'string') {
-        return data.replace(endpoint, cdn);
-      }
-
-      if (Array.isArray(data)) {
-        return data.map(replaceUrl);
-      }
-
-      if (typeof data === 'object') {
-        for (const key in data) {
-          data[key] = replaceUrl(data[key]);
-        }
-      }
-
-      return data;
-    };
+      return str
+        .replace(
+        process.env.AWS_ENDPOINT,
+        process.env.CDN_URL
+        )
+        .replace(
+          /\.r2\.cloudflarestorage\.com/,
+          '.r2.dev'
+        );
+      };
 
     if (ctx.body) {
       ctx.body = replaceUrl(ctx.body);
