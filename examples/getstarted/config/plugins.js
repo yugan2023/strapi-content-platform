@@ -34,6 +34,7 @@ upload: {
                 Bucket: env('CF_BUCKET'),
             },
             cloudflarePublicAccessUrl: env('CF_PUBLIC_ACCESS_URL'),
+            pool: false, 
         },
         actionOptions: {
             upload: {},
