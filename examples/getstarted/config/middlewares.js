@@ -1,8 +1,6 @@
 'use strict';
-
 const responseHandlers = require('./src/response-handlers');
-
-module.exports = [
+module.exports = ({ env }) => [
   'strapi::logger',
   'strapi::errors',
   {
@@ -11,9 +9,24 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'frame-src': ["'self'"], // URLs that will be loaded in an iframe (e.g. Content Preview)
-          // Needed to load the `@vercel/stega` lib on the dummy-preview page
+          'frame-src': ["'self'"],
           'script-src': ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
+          'connect-src': ["'self'", 'https:'],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            env('CF_PUBLIC_ACCESS_URL').replace(/^https?:\/\//, ''),
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            env('CF_PUBLIC_ACCESS_URL').replace(/^https?:\/\//, ''),
+          ],
+          upgradeInsecureRequests: null,
         },
       },
     },
