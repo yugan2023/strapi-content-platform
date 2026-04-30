@@ -21,7 +21,7 @@
     "@strapi/plugin-graphql": "^5.0.0",
     "@strapi/plugin-documentation": "^5.0.0",
     "strapi-provider-cloudflare-r2": "^0.3.0",
-    "pg": "^8.11.0",
+    "@strapi/plugin-color-picker": "^5.0.0",
     "better-sqlite3": "12.8.0",
     "lodash": "4.18.1",
     "mysql2": "3.20.0",
